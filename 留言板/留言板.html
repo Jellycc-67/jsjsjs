@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>留言板</title>
+</head>
+<body>
+    <script>
+
+        window.onload = function(){
+            
+            var IMessageBox = document.getElementById("messageBox");
+            var IInput = document.getElementById("myInput");
+            var IPostBtn = document.getElementById("doPost");
+            
+            IPostBtn.onclick = function(){
+                if(IInput.value){
+                    var ITime = document.createElement("div");
+                    ITime.className = "time";
+                    var myDate = new  Date();
+                    ITime.innerHTML = myDate.toLocaleString();
+                    IMessageBox.appendChild(ITime);
+                    
+                    var IMessageContent = document.createElement("div");
+                    IMessageContent.className = "message_content";
+                    IMessageContent.innerHTML = IInput.value;
+                    IInput.value = "";
+                    IMessageBox.appendChild(IMessageContent);
+                }
+                
+            }
+            
+        }
+    
+    </script>
+    <div class="content">
+        <div class="title">用户留言</div>
+        <div class="message_box" id="messageBox"></div>
+        <div><input id="myInput" type="text" placeholder="请说出你的批话"><button id="doPost">发送</button></div>
+    </div>
+</body>
+</html>

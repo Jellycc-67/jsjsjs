@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委托</title>
+</head>
+<body>
+    <ul>
+    <li id="one">点了一次</li>
+    <li id="two">点了两次</li>    
+    <li id="three">点了三次</li>    
+    <li id="four">点了四次</li></ul>
+    <script type="text/javascript">
+    var li=document.querySelector('#one');
+    li.onclick=function(){
+        console.log('点第一个');
+    }
+    var li=document.querySelector('#two');
+    li.onclick=function(){
+        console.log('点第二个');
+    }
+    var li=document.querySelector('#three');
+    li.onclick=function(){
+        console.log('点第三个');
+    }
+    var li=document.querySelector('#four');
+    li.onclick=function(){
+        console.log('点第四个');
+    }
+    ~function()
+{
+    var ul = document.getElementsByTagName('ul')[0],
+        li = ul.children,
+        f;
+    for (f = 0;f < li.length;++f) 
+    li[f].style.color = f % 2 ? 'green' : 'red'
+}()
+    
+    </script>
+</body>
+</html>
